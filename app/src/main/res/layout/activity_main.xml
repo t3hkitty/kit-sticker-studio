@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/kawaii_slate"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Header Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="@color/kawaii_indigo"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/ic_sticker_studio_logo"
+                android:contentDescription="@string/app_name" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_marginStart="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="KitStickerStudio 🐾"
+                    android:textColor="@color/kawaii_gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OnePlus 11 5G • Preset Bases &amp; Emoji Modifiers"
+                    android:textColor="@color/kawaii_pink"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Live Preview Stage (512x512 rendered at 200dp) -->
+        <FrameLayout
+            android:id="@+id/frame_preview_container"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/kawaii_slot_bg"
+            android:layout_marginBottom="16dp">
+
+            <ImageView
+                android:id="@+id/img_sticker_preview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:contentDescription="Live Sticker Preview" />
+        </FrameLayout>
+
+        <!-- Base Preset Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="✨ Preset Bases (Green, Purple, Kawaii, Hi-Contrast):"
+            android:textColor="@color/kawaii_lavender"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:id="@+id/layout_preset_chips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Preset Intensity Slider -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/lbl_preset_intensity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Intensity (100%):"
+                android:textColor="@color/kawaii_gold"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" />
+
+            <SeekBar
+                android:id="@+id/seek_preset_intensity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="100"
+                android:progress="100" />
+        </LinearLayout>
+
+        <!-- Emoji Modifiers Section -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🐱 Emoji Modifiers (Cat Ears, Devil Horns, Blush, Sparkles):"
+            android:textColor="@color/kawaii_lavender"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="8dp">
+
+            <LinearLayout
+                android:id="@+id/layout_modifier_chips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Modifier Controls: Scale & Flip -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btn_flip_modifier"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Flip ⇄"
+                android:textSize="11sp"
+                android:textColor="@color/kawaii_slate"
+                android:backgroundTint="@color/kawaii_lavender"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/lbl_modifier_scale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scale (1.0x):"
+                android:textColor="@color/kawaii_gold"
+                android:textSize="12sp"
+                android:layout_marginEnd="8dp" />
+
+            <SeekBar
+                android:id="@+id/seek_modifier_scale"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:max="150"
+                android:progress="100" />
+        </LinearLayout>
+
+        <!-- Quick Base Emoji Chooser -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🌸 Quick Emoji / Media Picker:"
+            android:textColor="@color/kawaii_lavender"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="6dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginBottom="16dp">
+
+            <LinearLayout
+                android:id="@+id/layout_emoji_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+        </HorizontalScrollView>
+
+        <!-- Studio Actions -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/btn_export_png"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="PNG (512x512) 📸"
+                android:textSize="11sp"
+                android:textColor="@color/kawaii_slate"
+                android:backgroundTint="@color/kawaii_lavender"
+                android:layout_marginEnd="6dp" />
+
+            <Button
+                android:id="@+id/btn_export_webp"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:text="Sticker WebP ✨"
+                android:textSize="11sp"
+                android:textColor="@color/kawaii_slate"
+                android:backgroundTint="@color/kawaii_greenlight" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_generate_pack"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Generate Expression Pack (6 Stickers) 🎁"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/kawaii_slate"
+            android:backgroundTint="@color/kawaii_pink"
+            android:layout_marginBottom="10dp" />
+
+        <Button
+            android:id="@+id/btn_animate_loop"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="Emoji Animator Loop (8 Frames) 🐾"
+            android:textSize="11sp"
+            android:textColor="@color/kawaii_gold"
+            android:backgroundTint="@color/kawaii_indigo" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KitStickerStudio</string>
+    <string name="title_sticker_studio">KitStickerStudio 🐾🎨</string>
+    <string name="btn_export_png">Export PNG</string>
+    <string name="btn_export_webp">Export WebP (512x512)</string>
+    <string name="btn_generate_pack">Generate Expression Pack 🎁</string>
+    <string name="btn_pick_image">Pick Custom Image 🖼️</string>
+</resources>

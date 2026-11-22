@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.KitStickerStudio" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/kawaii_indigo</item>
+        <item name="colorPrimaryVariant">@color/kawaii_slate</item>
+        <item name="colorOnPrimary">@color/kawaii_gold</item>
+        <item name="colorSecondary">@color/kawaii_pink</item>
+        <item name="android:statusBarColor">@color/kawaii_slate</item>
+    </style>
+</resources>
